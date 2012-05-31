@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Resources\Shaders\Flat-Diffuse.shader" />
+    <None Include="Resources\Shaders\Normal-Diffuse.shader" />
+    <None Include="Resources\Shaders\Normal-Specular.shader" />
+    <None Include="Resources\Shaders\Reflect-Specular.shader" />
+    <None Include="Resources\Shaders\Terrain.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
