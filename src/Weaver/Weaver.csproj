@@ -67,7 +67,6 @@
     <Compile Include="Parser\ErrorEventHandler.cs" />
     <Compile Include="Parser\Keywords.cs" />
     <Compile Include="Parser\Lexer.cs" />
-    <Compile Include="Parser\LexerBase.cs" />
     <Compile Include="Parser\Parser.cs" />
     <Compile Include="Parser\ShaderParser.cs" />
     <Compile Include="Parser\TextBuffer.cs" />
