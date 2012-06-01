@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parser\LexerTests.cs" />
-    <Compile Include="Parser\ShaderParserTests.cs" />
+    <Compile Include="SurfaceShaders\Parser\LexerTests.cs" />
+    <Compile Include="SurfaceShaders\Parser\ShaderParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
