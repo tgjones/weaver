@@ -98,6 +98,12 @@
     <EmbeddedResource Include="Resources\Lights\LightCommon.hlsl" />
     <EmbeddedResource Include="Resources\Lights\PointLight.hlsl" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SurfaceInput.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Macros.hlsl" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

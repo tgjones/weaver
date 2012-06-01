@@ -5,6 +5,11 @@
 		public Token Type { get; set; }
 		public string Name { get; set; }
 
-		public virtual string HlslValue { get { return null; } }
+		public abstract string HlslValue { get; }
+
+		public virtual string HlslDeclaration
+		{
+			get { return string.Format("{0} {1} = {2};", Type, Name, HlslValue); }
+		}
 	}
 }

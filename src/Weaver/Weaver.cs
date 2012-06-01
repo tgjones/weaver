@@ -9,15 +9,27 @@ namespace Weaver
 		public static string Weave(ShaderNode shaderNode, LightType lightType)
 		{
 			return CombineHlslFragments(
-				GetHlsl("LightingModels." + shaderNode.Surface.LightingModel),
+				GetDefines(shaderNode),
+				GetHlsl("Macros"),
 				GetHlsl("Lights.LightCommon"),
 				GetHlsl("Lights." + lightType + "Light"),
-				shaderNode.Surface.Code,
+				GetHlsl("LightingModels." + shaderNode.Surface.LightingModel),
 				GetHlsl("VertexShaderInput"),
 				GetHlsl("VertexShaderOutput"),
 				GetHlsl("VertexShader"),
 				GetHlsl("PixelShaderOutput"),
+				GetHlsl("SurfaceInput"),
+				GetSurfaceProperties(shaderNode),
+				shaderNode.Surface.Code,
 				GetHlsl("PixelShader"));
+		}
+
+		private static string GetDefines(ShaderNode shaderNode)
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.AppendLine(string.Format("#define SURFACE_OUTPUT_NAME {0}SurfaceOutput", shaderNode.Surface.LightingModel));
+			sb.AppendLine(string.Format("#define LIGHTING_MODEL_FUNC Lighting{0}", shaderNode.Surface.LightingModel));
+			return sb.ToString();
 		}
 
 		private static string CombineHlslFragments(params string[] hlslFragments)
@@ -43,6 +55,17 @@ namespace Weaver
 		private static Stream GetResourceStream(string resourceName)
 		{
 			return typeof(Weaver).Assembly.GetManifestResourceStream(typeof(Weaver), "Resources." + resourceName + ".hlsl");
+		}
+
+		private static string GetSurfaceProperties(ShaderNode shaderNode)
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.AppendLine("// Surface properties");
+			foreach (var propertyNode in shaderNode.Properties)
+				sb.AppendLine(propertyNode.HlslDeclaration);
+			sb.AppendLine();
+			sb.AppendLine();
+			return sb.ToString();
 		}
 	}
 }

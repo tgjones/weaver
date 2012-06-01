@@ -12,7 +12,7 @@ PixelShaderOutput PS(VertexShaderOutput input)
 	// TODO: Add other surface inputs here
 
 	SURFACE_OUTPUT_NAME surfaceOutput;
-	surfaceOutput.normal = input.worldNormal;
+	surfaceOutput.Normal = input.worldNormal;
 	surface(surfaceInput, surfaceOutput);
 
 	// Because light is additive, the final intensity of the light

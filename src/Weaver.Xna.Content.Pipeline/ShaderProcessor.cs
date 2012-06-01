@@ -35,7 +35,7 @@ namespace Weaver.Xna.Content.Pipeline
 
 		private string BuildFxFile(ShaderContent input)
 		{
-			return "TODO";
+			return Weaver.Weave(input.ShaderNode, LightType.Directional);
 		}
 	}
 }
