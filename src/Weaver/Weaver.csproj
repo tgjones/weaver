@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LightType.cs" />
     <Compile Include="SurfaceShaders\CodeModel\FloatShaderPropertyNode.cs" />
     <Compile Include="SurfaceShaders\CodeModel\FloatToken.cs" />
     <Compile Include="SurfaceShaders\CodeModel\IdentifierToken.cs" />
@@ -76,6 +77,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Vector4.cs" />
+    <Compile Include="Weaver.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -84,17 +86,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PixelShader.hlsl" />
-    <None Include="Resources\PixelShaderOutput.hlsl" />
-    <None Include="Resources\VertexShaderOutput.hlsl" />
-    <None Include="Resources\VertexShader.hlsl" />
-    <None Include="Resources\VertexShaderInput.hlsl" />
-    <None Include="Resources\LightingModels\BlinnPhong.hlsl" />
-    <None Include="Resources\LightingModels\FlatShading.hlsl" />
-    <None Include="Resources\LightingModels\Lambert.hlsl" />
-    <None Include="Resources\Lights\DirectionalLight.hlsl" />
-    <None Include="Resources\Lights\LightCommon.hlsl" />
-    <None Include="Resources\Lights\PointLight.hlsl" />
+    <EmbeddedResource Include="Resources\PixelShader.hlsl" />
+    <EmbeddedResource Include="Resources\PixelShaderOutput.hlsl" />
+    <EmbeddedResource Include="Resources\VertexShaderOutput.hlsl" />
+    <EmbeddedResource Include="Resources\VertexShader.hlsl" />
+    <EmbeddedResource Include="Resources\VertexShaderInput.hlsl" />
+    <EmbeddedResource Include="Resources\LightingModels\BlinnPhong.hlsl" />
+    <EmbeddedResource Include="Resources\LightingModels\FlatShading.hlsl" />
+    <EmbeddedResource Include="Resources\LightingModels\Lambert.hlsl" />
+    <EmbeddedResource Include="Resources\Lights\DirectionalLight.hlsl" />
+    <EmbeddedResource Include="Resources\Lights\LightCommon.hlsl" />
+    <EmbeddedResource Include="Resources\Lights\PointLight.hlsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
