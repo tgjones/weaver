@@ -52,7 +52,6 @@
     <Compile Include="CodeModel\ShaderPropertyNode.cs" />
     <Compile Include="CodeModel\ShaderPropertyNodeCollection.cs" />
     <Compile Include="CodeModel\StringToken.cs" />
-    <Compile Include="CodeModel\SurfaceInputNode.cs" />
     <Compile Include="CodeModel\SurfaceNode.cs" />
     <Compile Include="CodeModel\TextureShaderPropertyNode.cs" />
     <Compile Include="CodeModel\Token.cs" />

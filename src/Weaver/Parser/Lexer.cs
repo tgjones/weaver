@@ -34,7 +34,7 @@ namespace Weaver.Parser
 			get { return _buffer.IsEof; }
 		}
 
-		protected Lexer(string path, string text)
+		public Lexer(string path, string text)
 		{
 			_path = path;
 			_buffer = new TextBuffer(text);

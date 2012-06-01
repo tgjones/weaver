@@ -8,7 +8,7 @@
 
 	surface
 	{
-		SetLightingModel(FlatShading);
+		LightingModel = "FlatShading";
 
 		__hlsl__
 		void surface(SurfaceInput input, inout FlatShadingSurfaceOutput output)

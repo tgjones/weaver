@@ -41,17 +41,26 @@ namespace Weaver.Parser
 
 			Eat(TokenType.Equal);
 
+			ShaderPropertyNode shaderPropertyNode = ParseShaderPropertyDefaultValue(dataType, propertyName);
+
+			Eat(TokenType.Semicolon);
+
+			return shaderPropertyNode;
+		}
+
+		private ShaderPropertyNode ParseShaderPropertyDefaultValue(Token dataType, IdentifierToken propertyName)
+		{
 			switch (dataType.Type)
 			{
 				case TokenType.Float:
+				{
+					return new FloatShaderPropertyNode
 					{
-						return new FloatShaderPropertyNode
-						{
-							Type = dataType,
-							Name = propertyName.Identifier,
-							Value = ParseNumber()
-						};
-					}
+						Type = dataType,
+						Name = propertyName.Identifier,
+						Value = ParseNumber()
+					};
+				}
 				case TokenType.Float2:
 				{
 					Eat(TokenType.OpenParen);
@@ -88,8 +97,8 @@ namespace Weaver.Parser
 						Value = new Vector3(numbers[0], numbers[1], numbers[2])
 					};
 				}
-				case TokenType.Texture2D :
-				case TokenType.TextureCube :
+				case TokenType.Texture2D:
+				case TokenType.TextureCube:
 					string value = ParseString().Value;
 					return new TextureShaderPropertyNode
 					{

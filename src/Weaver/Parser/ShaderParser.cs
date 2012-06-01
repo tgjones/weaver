@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Weaver.CodeModel;
 
 namespace Weaver.Parser
@@ -37,38 +36,13 @@ namespace Weaver.Parser
 			Eat(TokenType.OpenCurly);
 
 			Eat(TokenType.LightingModel);
+			Eat(TokenType.Equal);
 			result.LightingModel = ParseString().Value;
-
-			result.Inputs = ParseSurfaceInputs();
+			Eat(TokenType.Semicolon);
 
 			result.Code = ((ShaderCodeToken) Eat(TokenType.ShaderCode)).ShaderCode;
 
 			Eat(TokenType.CloseCurly);
-
-			return result;
-		}
-
-		private List<SurfaceInputNode> ParseSurfaceInputs()
-		{
-			List<SurfaceInputNode> results = new List<SurfaceInputNode>();
-
-			Eat(TokenType.Inputs);
-			Eat(TokenType.OpenCurly);
-
-			while (PeekType() != TokenType.CloseCurly)
-				results.Add(ParseSurfaceInput());
-
-			Eat(TokenType.CloseCurly);
-
-			return results;
-		}
-
-		private SurfaceInputNode ParseSurfaceInput()
-		{
-			SurfaceInputNode result = new SurfaceInputNode();
-
-			result.Type = EatDataType();
-			result.Name = ((IdentifierToken) Eat(TokenType.Identifier)).Identifier;
 
 			return result;
 		}

@@ -43,15 +43,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Parser\LexerTests.cs" />
+    <Compile Include="Parser\ShaderParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\Shaders\Flat-Diffuse.shader" />
-    <None Include="Resources\Shaders\Normal-Diffuse.shader" />
-    <None Include="Resources\Shaders\Normal-Specular.shader" />
-    <None Include="Resources\Shaders\Reflect-Specular.shader" />
-    <None Include="Resources\Shaders\Terrain.shader" />
+    <None Include="Resources\Shaders\Flat-Diffuse.shader">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Shaders\Normal-Diffuse.shader">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Shaders\Normal-Specular.shader">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Shaders\Reflect-Specular.shader">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Shaders\Terrain.shader">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Weaver\Weaver.csproj">
+      <Project>{1FEBDFB0-464F-434B-BBD4-D84A1688A926}</Project>
+      <Name>Weaver</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
