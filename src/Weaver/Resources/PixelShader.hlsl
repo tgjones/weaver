@@ -1,7 +1,7 @@
 ﻿float3 CameraPosition : CAMERA_POSITION;
 float4 AmbientColor : AMBIENT_COLOR = float4(0.1, 0.1, 0.1, 1);
 
-PixelShaderOutput PS(VertexShaderOutput input)
+PixelShaderOutput PixelShaderForwardBase(VertexShaderForwardBaseOutput input)
 {
 	PixelShaderOutput output;
 
@@ -24,5 +24,12 @@ PixelShaderOutput PS(VertexShaderOutput input)
 
 	output.color = finalColor;
 
+	return output;
+}
+
+PixelShaderOutput PixelShaderShadowCaster(VertexShaderShadowCasterOutput input)
+{
+	PixelShaderOutput output;
+	output.color = float4(input.depth.x / input.depth.y, 0, 0, 1);
 	return output;
 }

@@ -21,7 +21,8 @@ namespace Weaver
 				GetHlsl("SurfaceInput"),
 				GetSurfaceProperties(shaderNode),
 				shaderNode.Surface.Code,
-				GetHlsl("PixelShader"));
+				GetHlsl("PixelShader"),
+				GetHlsl("Techniques"));
 		}
 
 		protected static string CombineHlslFragments(params string[] hlslFragments)
