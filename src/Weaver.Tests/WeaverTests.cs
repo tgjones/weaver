@@ -18,7 +18,7 @@ namespace Weaver.Tests
 			var shaderNode = parser.Parse();
 
 			// Act.
-			string fx = Weaver.Weave(shaderNode, lightType);
+			string fx = new Direct3D9Weaver().Weave(shaderNode, lightType);
 
 			// Assert.
 			Assert.That(fx, Is.Not.Null);

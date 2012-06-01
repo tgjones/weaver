@@ -4,9 +4,9 @@ using Weaver.SurfaceShaders.CodeModel;
 
 namespace Weaver
 {
-	public static class Weaver
+	public abstract class Weaver
 	{
-		public static string Weave(ShaderNode shaderNode, LightType lightType)
+		public virtual string Weave(ShaderNode shaderNode, LightType lightType)
 		{
 			return CombineHlslFragments(
 				GetDefines(shaderNode),
@@ -24,15 +24,7 @@ namespace Weaver
 				GetHlsl("PixelShader"));
 		}
 
-		private static string GetDefines(ShaderNode shaderNode)
-		{
-			StringBuilder sb = new StringBuilder();
-			sb.AppendLine(string.Format("#define SURFACE_OUTPUT_NAME {0}SurfaceOutput", shaderNode.Surface.LightingModel));
-			sb.AppendLine(string.Format("#define LIGHTING_MODEL_FUNC Lighting{0}", shaderNode.Surface.LightingModel));
-			return sb.ToString();
-		}
-
-		private static string CombineHlslFragments(params string[] hlslFragments)
+		protected static string CombineHlslFragments(params string[] hlslFragments)
 		{
 			StringBuilder sb = new StringBuilder();
 			foreach (string hlslFragment in hlslFragments)
@@ -41,6 +33,14 @@ namespace Weaver
 				sb.AppendLine();
 				sb.AppendLine();
 			}
+			return sb.ToString();
+		}
+
+		private static string GetDefines(ShaderNode shaderNode)
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.AppendLine(string.Format("#define SURFACE_OUTPUT_NAME {0}SurfaceOutput", shaderNode.Surface.LightingModel));
+			sb.AppendLine(string.Format("#define LIGHTING_MODEL_FUNC Lighting{0}", shaderNode.Surface.LightingModel));
 			return sb.ToString();
 		}
 

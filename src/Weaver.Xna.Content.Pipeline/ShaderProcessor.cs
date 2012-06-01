@@ -35,7 +35,7 @@ namespace Weaver.Xna.Content.Pipeline
 
 		private string BuildFxFile(ShaderContent input)
 		{
-			return Weaver.Weave(input.ShaderNode, LightType.Directional);
+			return new Direct3D9Weaver().Weave(input.ShaderNode, LightType.Directional);
 		}
 	}
 }

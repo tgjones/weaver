@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Direct3D9Weaver.cs" />
     <Compile Include="LightType.cs" />
     <Compile Include="SurfaceShaders\CodeModel\FloatShaderPropertyNode.cs" />
     <Compile Include="SurfaceShaders\CodeModel\FloatToken.cs" />
