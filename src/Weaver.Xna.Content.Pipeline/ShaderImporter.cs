@@ -1,9 +1,9 @@
 ﻿using System;
 using System.IO;
 using Microsoft.Xna.Framework.Content.Pipeline;
-using Weaver.SurfaceShaders.CodeModel;
-using Weaver.SurfaceShaders.Parser;
-using ErrorEventArgs = Weaver.SurfaceShaders.Parser.ErrorEventArgs;
+using Weaver.CodeModel;
+using Weaver.Parser;
+using ErrorEventArgs = Weaver.Parser.ErrorEventArgs;
 
 namespace Weaver.Xna.Content.Pipeline
 {

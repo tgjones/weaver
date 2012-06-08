@@ -40,37 +40,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Direct3D9Weaver.cs" />
-    <Compile Include="LightType.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\FloatShaderPropertyNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\FloatToken.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\IdentifierToken.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\IntToken.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\LiteralToken.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\LiteralTokenType.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\ParseNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\ShaderCodeToken.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\ShaderNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\ShaderPropertyNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\ShaderPropertyNodeCollection.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\StringToken.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\SurfaceNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\TextureShaderPropertyNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\Token.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\TokenType.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\Vector2ShaderPropertyNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\Vector3ShaderPropertyNode.cs" />
-    <Compile Include="SurfaceShaders\CodeModel\Vector4ShaderPropertyNode.cs" />
+    <Compile Include="CodeModel\FloatShaderPropertyNode.cs" />
+    <Compile Include="CodeModel\FloatToken.cs" />
+    <Compile Include="CodeModel\IdentifierToken.cs" />
+    <Compile Include="CodeModel\IntToken.cs" />
+    <Compile Include="CodeModel\LiteralToken.cs" />
+    <Compile Include="CodeModel\LiteralTokenType.cs" />
+    <Compile Include="CodeModel\ParseNode.cs" />
+    <Compile Include="CodeModel\ShaderCodeToken.cs" />
+    <Compile Include="CodeModel\ShaderNode.cs" />
+    <Compile Include="CodeModel\ShaderPropertyNode.cs" />
+    <Compile Include="CodeModel\ShaderPropertyNodeCollection.cs" />
+    <Compile Include="CodeModel\StringToken.cs" />
+    <Compile Include="CodeModel\SurfaceNode.cs" />
+    <Compile Include="CodeModel\TextureShaderPropertyNode.cs" />
+    <Compile Include="CodeModel\Token.cs" />
+    <Compile Include="CodeModel\TokenType.cs" />
+    <Compile Include="CodeModel\Vector2ShaderPropertyNode.cs" />
+    <Compile Include="CodeModel\Vector3ShaderPropertyNode.cs" />
+    <Compile Include="CodeModel\Vector4ShaderPropertyNode.cs" />
     <Compile Include="Vector3.cs" />
     <Compile Include="Vector2.cs" />
-    <Compile Include="SurfaceShaders\Parser\BufferPosition.cs" />
-    <Compile Include="SurfaceShaders\Parser\ErrorEventArgs.cs" />
-    <Compile Include="SurfaceShaders\Parser\ErrorEventHandler.cs" />
-    <Compile Include="SurfaceShaders\Parser\Keywords.cs" />
-    <Compile Include="SurfaceShaders\Parser\Lexer.cs" />
-    <Compile Include="SurfaceShaders\Parser\Parser.cs" />
-    <Compile Include="SurfaceShaders\Parser\ShaderParser.cs" />
-    <Compile Include="SurfaceShaders\Parser\TextBuffer.cs" />
+    <Compile Include="Parser\BufferPosition.cs" />
+    <Compile Include="Parser\ErrorEventArgs.cs" />
+    <Compile Include="Parser\ErrorEventHandler.cs" />
+    <Compile Include="Parser\Keywords.cs" />
+    <Compile Include="Parser\Lexer.cs" />
+    <Compile Include="Parser\Parser.cs" />
+    <Compile Include="Parser\ShaderParser.cs" />
+    <Compile Include="Parser\TextBuffer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -78,7 +76,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Vector4.cs" />
-    <Compile Include="Weaver.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -86,31 +83,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\PixelShader.hlsl" />
-    <EmbeddedResource Include="Resources\PixelShaderOutput.hlsl" />
-    <EmbeddedResource Include="Resources\VertexShaderOutput.hlsl" />
-    <EmbeddedResource Include="Resources\VertexShader.hlsl" />
-    <EmbeddedResource Include="Resources\VertexShaderInput.hlsl" />
-    <EmbeddedResource Include="Resources\LightingModels\BlinnPhong.hlsl" />
-    <EmbeddedResource Include="Resources\LightingModels\FlatShading.hlsl" />
-    <EmbeddedResource Include="Resources\LightingModels\Lambert.hlsl" />
-    <EmbeddedResource Include="Resources\Lights\DirectionalLight.hlsl" />
-    <EmbeddedResource Include="Resources\Lights\LightCommon.hlsl" />
-    <EmbeddedResource Include="Resources\Lights\PointLight.hlsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\SurfaceInput.hlsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Macros.hlsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Techniques.hlsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Shadows\ShadowCaster.hlsl" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

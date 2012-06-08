@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Content.Pipeline;
-using Weaver.SurfaceShaders.CodeModel;
+using Weaver.CodeModel;
 
 namespace Weaver.Xna.Content.Pipeline
 {

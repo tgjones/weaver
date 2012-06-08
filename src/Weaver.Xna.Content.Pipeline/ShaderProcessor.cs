@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 namespace Weaver.Xna.Content.Pipeline
 {
 	[ContentProcessor(DisplayName = "Shader - Weaver")]
-	public class ShaderProcessor : ContentProcessor<ShaderContent, CompiledShaderContent>
+	public abstract class ShaderProcessor : ContentProcessor<ShaderContent, CompiledShaderContent>
 	{
 		public override CompiledShaderContent Process(ShaderContent input, ContentProcessorContext context)
 		{
@@ -33,9 +33,6 @@ namespace Weaver.Xna.Content.Pipeline
 			return Path.Combine(Path.GetTempPath(), Path.ChangeExtension(Path.GetFileName(input.Identity.SourceFilename), extension));
 		}
 
-		private string BuildFxFile(ShaderContent input)
-		{
-			return new Direct3D9Weaver().Weave(input.ShaderNode, LightType.Directional);
-		}
+		protected abstract string BuildFxFile(ShaderContent input);
 	}
 }
