@@ -38,8 +38,8 @@ namespace Weaver.Parser
 			{
 				Column = 0;
 				Line++;
-				if (ch == '\r' && _offset < _text.Length && PeekChar() == '\n')
-					_offset++;
+				//if (ch == '\r' && _offset < _text.Length && PeekChar() == '\n')
+				//    _offset++;
 			}
 
 			return ch;

@@ -6,7 +6,6 @@ using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 
 namespace Weaver.Xna.Content.Pipeline
 {
-	[ContentProcessor(DisplayName = "Shader - Weaver")]
 	public abstract class ShaderProcessor : ContentProcessor<ShaderContent, CompiledShaderContent>
 	{
 		public override CompiledShaderContent Process(ShaderContent input, ContentProcessorContext context)
