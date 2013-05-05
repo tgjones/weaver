@@ -47,15 +47,17 @@ Usage
 * Use the `Shader - Weaver` content importer for your surface shader content files.
 
 * Define a new `ShaderProcessor` class that inherits from Weaver's `ShaderProcessor`:
+      ```csharp
       [ContentProcessor(DisplayName = "Shader - My Game")]
       public class ShaderProcessor : Weaver.Xna.Content.Pipeline.ShaderProcessor
       {
-        protected override string BuildFxFile(ShaderContent input)
-        {
-		  // Implement this in whatever way is appropriate for your project.
-          return new Shaders.Weaver().Weave(input.ShaderNode);
-        }
+          protected override string BuildFxFile(ShaderContent input)
+          {
+              // Implement this in whatever way is appropriate for your project.
+              return new Shaders.Weaver().Weave(input.ShaderNode);
+          }
       }
+      ```
 
 * Use your new content processor for your surface shader content files.
 
