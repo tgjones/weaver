@@ -1,1 +1,0 @@
-﻿#define SAMPLE_TEXTURE(Texture) tex2D(Texture##Sampler, input.uv)
