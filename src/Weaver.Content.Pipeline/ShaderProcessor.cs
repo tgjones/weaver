@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Content.Pipeline;
 using Microsoft.Xna.Framework.Content.Pipeline.Graphics;
 using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 
-namespace Weaver.Xna.Content.Pipeline
+namespace Weaver.Content.Pipeline
 {
 	public abstract class ShaderProcessor : ContentProcessor<ShaderContent, CompiledShaderContent>
 	{

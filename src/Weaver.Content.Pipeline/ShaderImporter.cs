@@ -1,11 +1,11 @@
 ﻿using System;
 using System.IO;
 using Microsoft.Xna.Framework.Content.Pipeline;
-using Weaver.CodeModel;
-using Weaver.Parser;
-using ErrorEventArgs = Weaver.Parser.ErrorEventArgs;
+using Weaver.Content.Pipeline.CodeModel;
+using Weaver.Content.Pipeline.Parser;
+using ErrorEventArgs = Weaver.Content.Pipeline.Parser.ErrorEventArgs;
 
-namespace Weaver.Xna.Content.Pipeline
+namespace Weaver.Content.Pipeline
 {
 	[ContentImporter(".shader", DisplayName = "Shader - Weaver", DefaultProcessor = "ShaderProcessor")]
 	public class ShaderImporter : ContentImporter<ShaderContent>

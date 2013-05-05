@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using NUnit.Framework;
-using Weaver.Parser;
+using Weaver.Content.Pipeline.Parser;
 
-namespace Weaver.Tests.Parser
+namespace Weaver.Content.Pipeline.Tests.Parser
 {
 	[TestFixture]
 	public class ShaderParserTests

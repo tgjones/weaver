@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Content.Pipeline;
-using Weaver.CodeModel;
+using Weaver.Content.Pipeline.CodeModel;
 
-namespace Weaver.Xna.Content.Pipeline
+namespace Weaver.Content.Pipeline
 {
 	public class ShaderContent : ContentItem
 	{

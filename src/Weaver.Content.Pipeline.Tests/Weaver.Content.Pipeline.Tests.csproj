@@ -8,8 +8,8 @@
     <ProjectGuid>{AAEB5E91-A916-4D7C-AE6C-6D7D32BDFBF6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Weaver.Tests</RootNamespace>
-    <AssemblyName>Weaver.Tests</AssemblyName>
+    <RootNamespace>Weaver.Content.Pipeline.Tests</RootNamespace>
+    <AssemblyName>Weaver.Content.Pipeline.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -66,9 +67,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Weaver\Weaver.csproj">
-      <Project>{1FEBDFB0-464F-434B-BBD4-D84A1688A926}</Project>
-      <Name>Weaver</Name>
+    <ProjectReference Include="..\Weaver.Content.Pipeline\Weaver.Content.Pipeline.csproj">
+      <Project>{3136059A-487D-456C-864E-536E50755A05}</Project>
+      <Name>Weaver.Content.Pipeline</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
