@@ -162,6 +162,12 @@ namespace Weaver.Content.Pipeline.CodeModel
 		[Description("properties")]
 		Properties,
 
+        [Description("technique")]
+        Technique,
+
+        [Description("state")]
+        State,
+
 		[Description("surface")]
 		Surface,
 

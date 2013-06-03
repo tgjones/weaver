@@ -4,6 +4,6 @@ namespace Weaver.Content.Pipeline.CodeModel
 	{
 		public string Name { get; set; }
 		public ShaderPropertyNodeCollection Properties { get; set; }
-		public SurfaceNode Surface { get; set; }
+		public TechniqueNode Technique { get; set; }
 	}
 }

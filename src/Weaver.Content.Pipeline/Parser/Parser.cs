@@ -7,7 +7,7 @@ namespace Weaver.Content.Pipeline.Parser
 {
 	public abstract class Parser
 	{
-		public event ErrorEventHandler Error;
+		public event EventHandler<ErrorEventArgs> Error;
 
 		private readonly string _path;
 		private readonly Token[] _tokens;
@@ -26,7 +26,7 @@ namespace Weaver.Content.Pipeline.Parser
 			Eat(TokenType.Properties);
 			Eat(TokenType.OpenCurly);
 
-			ShaderPropertyNodeCollection properties = new ShaderPropertyNodeCollection();
+			var properties = new ShaderPropertyNodeCollection();
 			while (PeekType() != TokenType.CloseCurly)
 				properties.Add(ParseShaderProperty());
 
@@ -38,7 +38,7 @@ namespace Weaver.Content.Pipeline.Parser
 		private ShaderPropertyNode ParseShaderProperty()
 		{
 			Token dataType = EatDataType();
-			IdentifierToken propertyName = (IdentifierToken)Eat(TokenType.Identifier);
+		    var propertyName = (IdentifierToken) Eat(TokenType.Identifier);
 
 			Eat(TokenType.Equal);
 

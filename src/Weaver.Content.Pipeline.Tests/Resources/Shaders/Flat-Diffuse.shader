@@ -6,16 +6,38 @@
 		float Alpha = 1;
 	}
 
-	surface
+	technique
 	{
-		LightingModel = "FlatShading";
-
-		__hlsl__
-		void surface(SurfaceInput input, inout FlatShadingSurfaceOutput output)
+		state
 		{
-			output.Diffuse = DiffuseColor;
-			output.Alpha = Alpha;
+			CullMode = CullClockwiseFace;
+			//FillMode = Wireframe;
+			DepthBias = 0.001;
+			SlopeScaleDepthBias = 0.001;
+
+			DepthBufferFunction = LessEqual;
+			DepthBufferWriteEnable = true;
+			DepthBufferEnable = false;
+
+			AlphaBlendFunction = Add;
+			AlphaDestinationBlend = One;
+			AlphaSourceBlend = Zero;
+			ColorBlendFunction = Min;
+			ColorDestinationBlend = SourceAlpha;
+			ColorSourceBlend = SourceColor;
 		}
-		__hlsl__
+
+		surface
+		{
+			LightingModel = "FlatShading";
+
+			__hlsl__
+			void surface(SurfaceInput input, inout FlatShadingSurfaceOutput output)
+			{
+				output.Diffuse = DiffuseColor;
+				output.Alpha = Alpha;
+			}
+			__hlsl__
+		}
 	}
 }

@@ -10,7 +10,7 @@ namespace Weaver.Content.Pipeline.Parser
 	{
 		public const string HlslDelimiter = "__hlsl__";
 
-		public event ErrorEventHandler Error;
+		public event EventHandler<ErrorEventArgs> Error;
 
 		private readonly string _path;
 		private readonly TextBuffer _buffer;
